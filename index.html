@@ -1,23 +1,30 @@
 <!DOCTYPE html>
-<html>
-  <head>
-    <title>Random Image</title>
-  </head>
-  <body>
-    <img id="randomImage" src="" alt="Random Image">
-    <script>
-      var images = [
-        "https://i.imgur.com/iQpf246.png",
-        "https://i.imgur.com/GdkyJSq.jpeg",
-        "https://i.imgur.com/68LuVG8.jpeg",
-        "https://i.imgur.com/K97gbtT_d.webp"
-      ];
-      function getRandomInt(max) {
-        return Math.floor(Math.random() * Math.floor(max));
-      }
-      var randomIndex = getRandomInt(images.length);
-      var randomImage = document.getElementById("randomImage");
-      randomImage.src = images[randomIndex];
-    </script>
-  </body>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ランダム画像表示</title>
+  <script>
+    const images = [
+      'image1.png',
+      'image2.jpeg',
+      'image3.jpeg',
+      // 他の画像ファイル名をここに追加
+    ];
+
+    function displayRandomImage() {
+      const randomIndex = Math.floor(Math.random() * images.length);
+      const imageUrl = 'https://isasaassaias.github.io/' + images[randomIndex];
+
+      const imageElement = document.getElementById('random-image');
+      imageElement.src = imageUrl;
+    }
+
+    window.onload = displayRandomImage;
+  </script>
+</head>
+<body>
+  <h1>ランダム画像表示</h1>
+  <img id="random-image" alt="ランダムな画像" />
+</body>
 </html>
